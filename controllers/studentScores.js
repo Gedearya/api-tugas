@@ -4,9 +4,13 @@ const StudentScore = require('../models/student-score');
 exports.getAllStudentScores = async (req, res) => {
   try {
     const studentScores = await StudentScore.find();
-    res.status(200).json(studentScores);
+
+    return res.status(500).json({
+      message: 'Internal Server Error, Contact Admin',
+      // debug: studentScores
+    });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    return res.status(500).json({ message: 'Internal Server Error' });
   }
 };
 
