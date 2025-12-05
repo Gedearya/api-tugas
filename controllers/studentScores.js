@@ -7,7 +7,7 @@ exports.getAllStudentScores = async (req, res) => {
 
     return res.status(500).json({
       message: 'Internal Server Error, Contact Admin',
-      // debug: studentScores
+      debug: studentScores
     });
   } catch (error) {
     return res.status(500).json({ message: 'Internal Server Error' });
