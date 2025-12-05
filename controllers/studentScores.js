@@ -5,9 +5,8 @@ exports.getAllStudentScores = async (req, res) => {
   try {
     const studentScores = await StudentScore.find();
 
-    return res.status(500).json({
-      message: 'Internal Server Error, Contact Admin',
-      debug: studentScores
+    return res.status(200).json({
+      data: studentScores
     });
   } catch (error) {
     return res.status(500).json({ message: 'Internal Server Error' });
